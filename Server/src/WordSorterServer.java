@@ -38,7 +38,8 @@ public class WordSorterServer {
                         out.println("Content-Type: text/plain; charset=utf-8");
                         out.println("Content-Length: " + sortedWords.getBytes("UTF-8").length);
                         out.println();
-                        out.println(sortedWords);
+                        out.print(sortedWords);
+                        out.flush();
                     }
                 } catch (IOException e) {
                     System.err.println("Error handling client: " + e.getMessage());
